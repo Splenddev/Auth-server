@@ -6,6 +6,7 @@ import {
   login,
   logout,
   register,
+  resetPassword,
   sendOtp,
   sendResetOtp,
   verifyOtp,
@@ -23,7 +24,8 @@ userRouter.post('/logout', logout);
 userRouter.post('/check/username', checkUserName);
 userRouter.post('/otp/send', userAuthMiddleware, sendOtp);
 userRouter.post('/otp/verify', userAuthMiddleware, verifyOtp);
-userRouter.post('/otp/reset-password/send', userAuthMiddleware, sendResetOtp);
-userRouter.post('/reset/password', userAuthMiddleware, verifyResetOtp);
+userRouter.post('/otp/reset-password/send', sendResetOtp);
+userRouter.post('/otp/reset-password/verify', verifyResetOtp);
+userRouter.post('/reset/password', resetPassword);
 
 export default userRouter;
