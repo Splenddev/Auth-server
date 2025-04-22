@@ -10,7 +10,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 connectDB();
 
-const allowedUrls = ['http://localhost:5173'];
+const allowedUrls = [
+  'http://localhost:5173',
+  'https://user-auth-a9pf.onrender.com',
+];
 
 //app middleware
 app.use(express.json());
